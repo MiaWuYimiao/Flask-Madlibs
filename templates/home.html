@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title%}Home page{% endblock %}
+
+{% block content%}
+<h1>Madlibs</h1>
+<!-- <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> -->
+  <form action="/form">
+    <select name="story_type">
+        {% for story in stories %}
+        <option>{{story.title}}</option>
+        {% endfor %}
+    </select>
+    <button>Go</button>
+  </form>
+{% endblock%}
